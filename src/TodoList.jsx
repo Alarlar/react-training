@@ -1,17 +1,17 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
-const trainingPlan = [
-    { id: 1, title: "Sleep"},
-    { id: 2, title: "Train"},
-    { id: 3, title: "Make $"}
-  ];
+// const trainingPlan = [
+//     { id: 1, title: "Sleep"},
+//     { id: 2, title: "Train"},
+//     { id: 3, title: "Make $"}
+//   ];
 
-function ToplanList() {
+function TodoList( {todoList} ) {
     return (
         <div>
             <ul> 
-                {trainingPlan.map((todo) => (
+                {todoList.map((todo) => (
                    <TodoListItem key={todo.id} todo={todo} />
                 ))}
             </ul>
@@ -19,4 +19,4 @@ function ToplanList() {
     );
 } 
 
-export default ToplanList;
+export default TodoList;
