@@ -7,12 +7,16 @@ import TodoListItem from './TodoListItem';
 //     { id: 3, title: "Make $"}
 //   ];
 
-function TodoList( {todoList} ) {
+function TodoList( {todoList, onRemoveTodo} ) {
     return (
         <div>
             <ul> 
                 {todoList.map((todo) => (
-                   <TodoListItem key={todo.id} todo={todo} />
+                   <TodoListItem 
+                        key={todo.id}
+                        todo={todo}
+                        onRemoveTodo={onRemoveTodo}
+                />
                 ))}
             </ul>
         </div>
