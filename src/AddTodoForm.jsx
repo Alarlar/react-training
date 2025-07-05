@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputWithLabel from './InputWithLabel';
 
 function AddTodoForm({ onAddTodo }) { // Это новый компнонент
     const [todoTitle, setTodoTitle] = useState('');
@@ -21,17 +22,20 @@ function AddTodoForm({ onAddTodo }) { // Это новый компнонент
     }
 
     return (
-        <div>
-            <form onSubmit={handleAddTodo}>
-                <input 
-                    name='title' 
-                    type='text' 
-                    id='todoTitle'
-                    value={todoTitle}
-                    onChange={handleTitleChange}   
-                />
-                <button type='submit'>Add Todo</button>
-            </form>
+        <div className='mb-4'>
+            <InputWithLabel
+                label='title' 
+                todoTitle={todoTitle}
+                handleTitleChange={handleTitleChange}   
+            />
+            <button 
+                type='submit'
+                onClick={handleAddTodo}
+                className='mt-2 w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700'
+            >
+            Add
+            </button>
+            
         </div>
     );
 };
